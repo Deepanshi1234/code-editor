@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Code Editor</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+    }
+
+    #editor {
+      width: 100%;
+      height: 300px;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    button {
+      margin: 5px;
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    #copyBtn {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    #saveBtn {
+      background-color: #008CBA;
+      color: white;
+    }
+
+    #lockBtn {
+      background-color: #f44336;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <button id="copyBtn">Copy</button>
+    <button id="saveBtn">Save</button>
+    <button id="lockBtn" onclick="toggleLock()">Lock/Unlock</button>
+  </div>
+  <textarea id="editor"></textarea>
+
+  <script>
+    let locked = false;
+
+    function toggleLock() {
+      locked = !locked;
+      document.getElementById('editor').readOnly = locked;
+    }
+
+    document.getElementById('copyBtn').addEventListener('click', function() {
+      const editorContent = document.getElementById('editor');
+      editorContent.select();
+      document.execCommand('copy');
+      alert('Code copied to clipboard!');
+    });
+
+    document.getElementById('saveBtn').addEventListener('click', function() {
+      const editorContent = document.getElementById('editor').value;
+      // You can implement save functionality here, e.g., sending content to a server
+      alert('Code saved!');
+    });
+  </script>
+</body>
+</html>

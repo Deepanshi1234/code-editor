@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code-Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            
+            <h1>Code-<span>Editor</span>
+            </h1>
+            <img src="img4.png" alt="">
+            <label  id="dark-change"></label>
+        </div>
+        
+
+    </nav>
+    <div class="ide">
+
+        <div class="add-ide" id="addnewide">
+            <p>Ide</p>
+            <button><i class="fas fa-times"></i>
+            </button>
+
+        </div>
+        <button onclick="addnew()">
+
+            <i class="fas fa-add add-new"></i>
+        </button>
+    </div>
+    <div class="container">
+        <div class="editor">
+            <div class="header">
+                <div class="left-header">
+                    <div class="language">
+                        <select name="" id="">
+                            <option value="0">Choose...</option>
+                            <option value="1" id="addc++">C++</option>
+                            <option value="2">HTML</option>
+                            <option value="3">CSS</option>
+                            <option value="4">Javascript</option>
+                            <option value="5">PHP</option>
+                            <option value="6">Java</option>
+                            <option value="7">Python</option>
+                        </select>
+                    </div>
+           
+                </div>
+                <div class="right-header">
+                    <button >Run</button>
+                   <button id="copyBtn">Copy</button>
+               <button id="saveBtn">Save</button>
+               <button id="lockBtn" onclick="toggleLock()">Lock/Unlock</button>
+               
+           
+                </div>
+    
+            </div>
+
+            <textarea name="" id="editor"  autocorrect="off" autocomplete="off"></textarea>
+        </div>
+        <div class="output">
+            <div class="label-icon">
+
+                <label><i class="fas fa-play"></i>OutPut!</label>
+            </div>
+            <div>
+
+                <iframe id="output"></iframe>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    
+</body>
+</html>
